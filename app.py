@@ -247,7 +247,7 @@ with tab2:
     st.subheader("Layer 1 — Premium SVOD")
     df_premium = competitors_to_df(m2["premium"])
     display_cols = ["platform", "type", "pricing_local", "content_focus",
-                    "local_content_strength", "monetization", "source", "confidence", "notes"]
+                    "local_content_strength", "monetization", "source", "source_date", "confidence", "notes"]
     st.dataframe(
         df_premium[display_cols].rename(columns={
             "platform": "Platform",
@@ -257,6 +257,7 @@ with tab2:
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
             "source": "Source",
+            "source_date": "Date",
             "confidence": "Confidence",
             "notes": "Notes",
         }),
@@ -275,6 +276,7 @@ with tab2:
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
             "source": "Source",
+            "source_date": "Date",
             "confidence": "Confidence",
             "notes": "Notes",
         }),
@@ -293,6 +295,7 @@ with tab2:
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
             "source": "Source",
+            "source_date": "Date",
             "confidence": "Confidence",
             "notes": "Notes",
         }),
@@ -549,7 +552,8 @@ with st.sidebar:
     st.markdown("### Framework")
     st.markdown(
         "Each market scored on three competitive pressure dimensions (1–5) "
-        "with documented rationale. Scores are qualitative assessments, "
+        "with documented rationale. Scores are semi-quantitative assessments "
+        "decomposed into sub-signals, "
         "not statistical outputs."
     )
     st.markdown("---")
