@@ -31,6 +31,7 @@ Japan and Korea where these pressures differ fundamentally.
 | Pricing/model | Platform pricing pages, news coverage | Reported |
 
 All data is public, transparent, and labeled by reliability tier.
+Every platform entry includes source, source date, and confidence level.
 
 ## 4. Approach
 
@@ -39,12 +40,14 @@ Three-layer competitive pressure framework:
 2. **Free substitution pressure** — demand absorbed by free/ad-supported platforms
 3. **UGC/attention fragmentation** — attention diverted from long-form paid content
 
-Each market is scored on a 1–5 qualitative scale per pressure dimension,
-with explicit rationale for each score.
+Each market is scored 1–5 per pressure dimension. Scores are **decomposed into
+3 sub-signals** each (e.g., local premium strength, bundle advantage, originals depth)
+with documented rationale. This is semi-quantitative scoring, not pure expert judgment.
 
 ## 5. Key Findings
 
-Japan and Korea have fundamentally different competitive structures:
+Japan and Korea appear to have fundamentally different competitive structures
+within this comparison:
 - **Japan:** Moderate premium SVOD rivalry, but high free substitution pressure
   (TVer, ABEMA) and significant UGC attention fragmentation
 - **Korea:** Strong premium local competition (Tving, Wavve, Coupang Play),

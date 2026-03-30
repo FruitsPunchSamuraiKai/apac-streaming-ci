@@ -159,20 +159,32 @@ with tab1:
 
     st.divider()
 
-    # Top competitive pressures
-    st.subheader("Top Competitive Pressures")
+    # Top competitive pressures with sub-signal decomposition
+    st.subheader("Competitive Pressure Scoring")
     sorted_pressures = sorted(
         pressures.items(), key=lambda x: x[1]["score"], reverse=True
     )
     for key, p in sorted_pressures:
         label = PRESSURE_LABELS[key]
         st.markdown(f"**{label}** — {p['label']} ({p['score']}/5)")
+        # Sub-signals
+        subs = p.get("sub_signals", {})
+        if subs:
+            sub_rows = []
+            for sub_name, sub_data in subs.items():
+                sub_rows.append({
+                    "Sub-signal": sub_name.replace("_", " ").title(),
+                    "Score": f"{sub_data['score']}/5",
+                    "Note": sub_data["note"],
+                })
+            with st.expander("View sub-signal breakdown"):
+                st.dataframe(pd.DataFrame(sub_rows), use_container_width=True, hide_index=True)
         st.caption(p["rationale"])
 
     st.divider()
     st.caption(
-        "Note: All data is from public sources. Pressure scores are qualitative "
-        "assessments based on documented rationale (see Assumptions). "
+        "Note: All data is from public sources. Pressure scores are semi-quantitative "
+        "assessments decomposed into sub-signals with documented rationale. "
         "This is an external-data planning framework, not an internal market model."
     )
 
@@ -235,7 +247,7 @@ with tab2:
     st.subheader("Layer 1 — Premium SVOD")
     df_premium = competitors_to_df(m2["premium"])
     display_cols = ["platform", "type", "pricing_local", "content_focus",
-                    "local_content_strength", "monetization", "notes"]
+                    "local_content_strength", "monetization", "source", "confidence", "notes"]
     st.dataframe(
         df_premium[display_cols].rename(columns={
             "platform": "Platform",
@@ -244,6 +256,8 @@ with tab2:
             "content_focus": "Content Focus",
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
+            "source": "Source",
+            "confidence": "Confidence",
             "notes": "Notes",
         }),
         use_container_width=True,
@@ -260,6 +274,8 @@ with tab2:
             "content_focus": "Content Focus",
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
+            "source": "Source",
+            "confidence": "Confidence",
             "notes": "Notes",
         }),
         use_container_width=True,
@@ -276,6 +292,8 @@ with tab2:
             "content_focus": "Content Focus",
             "local_content_strength": "Local Strength (1–5)",
             "monetization": "Model",
+            "source": "Source",
+            "confidence": "Confidence",
             "notes": "Notes",
         }),
         use_container_width=True,

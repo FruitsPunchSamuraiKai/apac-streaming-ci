@@ -13,7 +13,8 @@ All data points are classified into one of three tiers:
 ## Competitive Pressure Scoring
 
 Each market is scored 1–5 on three competitive pressure dimensions.
-Scores are qualitative, based on documented rationale.
+Scores are **semi-quantitative**: each top-level score is decomposed into
+**3 sub-signals**, each scored independently with a documented note.
 
 | Score | Meaning |
 |---|---|
@@ -23,7 +24,23 @@ Scores are qualitative, based on documented rationale.
 | 4 | High pressure — strong competitive forces |
 | 5 | Very high pressure — dominant competitive dynamic |
 
-Every score includes a written rationale explaining the judgment.
+### Sub-signal structure (per pressure dimension)
+
+| Pressure | Sub-signals |
+|---|---|
+| Direct Paid Streaming | Local premium strength, Bundle advantage, Local originals depth |
+| Free Substitution | Broadcaster catch-up strength, FAST/free penetration, Free content expectation |
+| UGC/Attention | Mobile video share, YouTube dominance, Short-form intensity |
+
+Every score includes written rationale and sub-signal breakdown.
+
+### Platform data fields
+
+Each competitor entry includes:
+- **source:** Where the data comes from (e.g., "Netflix IR", "CyberAgent IR")
+- **source_date:** When the data was current (e.g., "2025 Q4")
+- **confidence:** high / medium / low
+- **data_tier:** 1 (reported), 2 (market estimate), 3 (proxy)
 
 ## Key Assumptions
 
