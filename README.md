@@ -2,7 +2,7 @@
 
 *Part of a two-project analytical series. This project maps the competitive
 environment; the companion project
-([Japan Content Investment Efficiency](../japan-content-efficiency/README.md))
+([Japan Content Investment Efficiency](https://github.com/FruitsPunchSamuraiKai/japan-content-efficiency))
 provides a framework for content investment discussion within that environment.*
 
 ## 1. Problem
